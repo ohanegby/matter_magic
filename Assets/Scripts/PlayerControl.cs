@@ -43,7 +43,7 @@ public class PlayerControl : MonoBehaviour, IMagicSourceEvent
             haveHit = true;
             Rigidbody rb = magicProbe.GetComponent<Rigidbody>();
             //magicProbe.transform.position = leftHand.transform.position + forwardVector * hit.distance * 0.9f;
-            rb.MovePosition(leftHand.transform.position + forwardVector * hit.distance * 0.9f);
+            rb.MovePosition(leftHand.transform.position + forwardVector * hit.distance * 1.01f);
         }
     }
 

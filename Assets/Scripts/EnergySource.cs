@@ -17,7 +17,7 @@ public class EnergySource : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("trigger!!!");
+        //Debug.Log("trigger!!!");
 
         ExecuteEvents.Execute<IMagicSourceEvent>(other.gameObject, null, (x, y) => x.MagicSourceEnergy());
     }
