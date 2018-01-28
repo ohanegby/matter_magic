@@ -40,7 +40,9 @@ public class PlayerControl : MonoBehaviour, IMagicSourceEvent
         if (Physics.Raycast(leftHand.transform.position, forwardVector, out hit))
         {
             haveHit = true;
-            magicProbe.transform.position = leftHand.transform.position + forwardVector * hit.distance * 0.9f;
+            Rigidbody rb = magicProbe.GetComponent<Rigidbody>();
+            //magicProbe.transform.position = leftHand.transform.position + forwardVector * hit.distance * 0.9f;
+            rb.MovePosition(leftHand.transform.position + forwardVector * hit.distance * 0.9f);
         }
     }
 

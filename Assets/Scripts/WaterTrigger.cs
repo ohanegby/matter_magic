@@ -16,8 +16,12 @@ public class WaterTrigger : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("collider");
-        collided = true;
+        //Debug.Log("collider");
+       // Debug.Log(other.gameObject.name);
+        if (other.gameObject.name.Equals("magic_probe"))
+        {
+            collided = true;
+        }
     }
 
     public bool hasCollided()
