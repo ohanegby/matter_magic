@@ -7,6 +7,7 @@ public class mountainDown : MonoBehaviour
 
     public float Showtime = 0f;
     public int counter = 7;
+    public bool shouldMelt = false;
     //public GameObject snowCollider;
     //WaterTrigger waterTrigger;
 
@@ -17,10 +18,13 @@ public class mountainDown : MonoBehaviour
 
     void Update()
     {
-        if (counter > 0) //&& waterTrigger.hasCollided()
+        
+        if (counter > 0 && shouldMelt) //&& waterTrigger.hasCollided()
         {
             Showtime = 7f;
             counter = counter - 1;
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
         }
         if (Showtime > 0f)
         {

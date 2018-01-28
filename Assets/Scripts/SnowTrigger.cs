@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class SnowTrigger : MonoBehaviour {
     bool collided = false;
+    public GameObject snowToMelt;
+    mountainDown mountain;
     // Use this for initialization
     void Start () {
-		
+        mountain = snowToMelt.GetComponent<mountainDown>();
 	}
 	
 	// Update is called once per frame
@@ -24,6 +26,10 @@ public class SnowTrigger : MonoBehaviour {
         {
             Debug.Log("collider_snow_magic");
             collided = true;
+            mountain.shouldMelt = true;
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
+
             gameObject.SetActive(false);
         }
     }
