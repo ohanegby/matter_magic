@@ -11,7 +11,8 @@ public class PlayerControl : MonoBehaviour, IMagicSourceEvent
     public GameObject magicProbe;
     public GameObject magicParticles;
     public GameObject magicBeam;
- 
+    public GameObject endParticles;
+
     bool isThumbPressed = false;
     bool magicMode = false;
     Vector3 thumbStart;
@@ -127,6 +128,10 @@ public class PlayerControl : MonoBehaviour, IMagicSourceEvent
     public void PickedDiamond()
     {
         diamondCount++;
+        if (diamondCount >= 2)
+        {
+            endParticles.SetActive(true);
+        }
     }
 
     public void MagicSourceType(string magicType)
