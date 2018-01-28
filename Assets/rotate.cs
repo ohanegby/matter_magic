@@ -1,0 +1,18 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class rotate : MonoBehaviour
+{
+
+    public float speed = 10f;
+
+    // Update is called once per frame
+    void Update()
+    {
+        transform.Rotate(Vector3.up, speed * Time.deltaTime);
+        //transform.Rotate(Vector3.right * Time.deltaTime);
+        //transform.Rotate(0, 20 * Time.deltaTime, 0);
+
+    }
+}
