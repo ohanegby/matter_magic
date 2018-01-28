@@ -10,7 +10,7 @@ public class moveleft : MonoBehaviour
 
     void Update () {
         if(counter > 0) {
-            Showtime = 5f;
+            Showtime = 7f;
             counter = counter - 1;
         }
         if (Showtime > 0f)

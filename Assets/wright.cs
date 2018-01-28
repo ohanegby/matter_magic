@@ -12,7 +12,7 @@ public class wright : MonoBehaviour
     {
         if (counter > 0)
         {
-            Showtime = 5f;
+            Showtime = 7f;
             counter = counter - 1;
         }
         if (Showtime > 0f)
