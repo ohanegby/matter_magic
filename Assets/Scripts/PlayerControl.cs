@@ -16,6 +16,7 @@ public class PlayerControl : MonoBehaviour, IMagicSourceEvent
     bool magicMode = false;
     Vector3 thumbStart;
     public float playerHeight = 10.0f;
+    int diamondCount = 0;
 	// Use this for initialization
 	void Start () {
         
@@ -119,5 +120,10 @@ public class PlayerControl : MonoBehaviour, IMagicSourceEvent
         magicProbe.SetActive(false);
         OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.LTouch);
         magicMode = false;
+    }
+
+    public void PickedDiamond()
+    {
+        diamondCount++;
     }
 }
