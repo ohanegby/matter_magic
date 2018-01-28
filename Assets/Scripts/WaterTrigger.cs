@@ -30,8 +30,14 @@ public class WaterTrigger : MonoBehaviour {
             Debug.Log(eps.GetMagicType());
            // if (eps.GetMagicType().Equals("staff"))
             //{
+            if (!collided) {
                 collided = true;
-           // }
+                AudioSource audio = GetComponent<AudioSource>();
+
+                audio.Play();
+            }
+            
+            // }
         }
     }
 

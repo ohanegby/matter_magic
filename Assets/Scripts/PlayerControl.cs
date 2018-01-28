@@ -98,7 +98,9 @@ public class PlayerControl : MonoBehaviour, IMagicSourceEvent
                 Quaternion rotation = Quaternion.LookRotation(relativePos);
                 transform.position = probe.transform.position + new Vector3(0, playerHeight,0);
                 transform.rotation = rotation;
-                
+                AudioSource audio = GetComponent<AudioSource>();
+                audio.Play();
+
             }
         }
       //  transform.position += new Vector3(touchAxis.x, 0, touchAxis.y);

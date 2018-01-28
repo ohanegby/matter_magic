@@ -15,12 +15,16 @@ public class DiamondScript : MonoBehaviour {
 		
 	}
 
-    private void OnTriggerEnter(Collider other)
+    private IEnumerator OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name.Equals("Player"))
         {
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
+            yield return new WaitForSeconds(audio.clip.length);
             gameObject.SetActive(false);
             playerControl.PickedDiamond();
+            
         }
     }
 }
