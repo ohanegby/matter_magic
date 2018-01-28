@@ -5,7 +5,6 @@ using UnityEngine;
 public class DiamondScript : MonoBehaviour {
     public GameObject player;
     PlayerControl playerControl;
-    public bool canPick = false;
 	// Use this for initialization
 	void Start () {
         playerControl = player.GetComponent<PlayerControl>();
@@ -18,7 +17,7 @@ public class DiamondScript : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name.Equals("Player") && canPick)
+        if (other.gameObject.name.Equals("Player"))
         {
             gameObject.SetActive(false);
             playerControl.PickedDiamond();
