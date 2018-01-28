@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class EnergySource : MonoBehaviour {
-
+    public string magicType = "unknown";
 	// Use this for initialization
 	void Start () {
 		
@@ -18,7 +18,7 @@ public class EnergySource : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("trigger!!!");
-
+        ExecuteEvents.Execute<IMagicSourceEvent>(other.gameObject, null, (x, y) => x.MagicSourceType(magicType));
         ExecuteEvents.Execute<IMagicSourceEvent>(other.gameObject, null, (x, y) => x.MagicSourceEnergy());
     }
 

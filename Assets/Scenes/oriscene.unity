@@ -270,8 +270,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 124268097}
-  m_LocalRotation: {x: 0, y: 0.97045374, z: 0, w: -0.24128726}
-  m_LocalPosition: {x: 1043.21, y: -45.239998, z: 933}
+  m_LocalRotation: {x: -0.10477577, y: 0.07987174, z: 0.008442599, w: 0.99124736}
+  m_LocalPosition: {x: 1199.6774, y: -73.35634, z: 146.65955}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -370,7 +370,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 139273668}
   m_LocalRotation: {x: -0.5687359, y: -0.5744794, z: 0.50046754, w: 0.30991167}
-  m_LocalPosition: {x: 1786.8, y: 352.4, z: 1513.7}
+  m_LocalPosition: {x: 1786.8, y: 352.4, z: 1513.6}
   m_LocalScale: {x: 35.849888, y: -34.391388, z: 35.833656}
   m_Children: []
   m_Father: {fileID: 0}
@@ -402,6 +402,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006ab43b6d062cf4c9c164599a9d325f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  diamond: {fileID: 678694744}
+  magicProbe: {fileID: 1485081849}
 --- !u!1 &194250838
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,6 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 134913132}
+  canPick: 0
 --- !u!54 &194250844
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -549,7 +552,7 @@ GameObject:
   - component: {fileID: 233132389}
   - component: {fileID: 233132388}
   m_Layer: 2
-  m_Name: Sphere (1)
+  m_Name: LavaEnergySource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -632,6 +635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 001bbd1a04b2d3b499efb762604fa1ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  magicType: lava
 --- !u!54 &233132389
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1313,8 +1317,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 516540007}
-  m_LocalRotation: {x: 0, y: 0.97045374, z: 0, w: -0.24128726}
-  m_LocalPosition: {x: 985.59033, y: 107.37999, z: 606.22327}
+  m_LocalRotation: {x: -0.10477577, y: 0.07987174, z: 0.008442599, w: 0.99124736}
+  m_LocalPosition: {x: 1401.566, y: 135.49637, z: 1291.6266}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1573,8 +1577,11 @@ GameObject:
   - component: {fileID: 678694747}
   - component: {fileID: 678694746}
   - component: {fileID: 678694745}
-  m_Layer: 0
-  m_Name: PearCut
+  - component: {fileID: 678694749}
+  - component: {fileID: 678694748}
+  - component: {fileID: 678694750}
+  m_Layer: 2
+  m_Name: SnowDiamond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1636,6 +1643,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &678694748
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 678694744}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.04
+  m_Height: 0.15
+  m_Direction: 2
+  m_Center: {x: -0.0063549997, y: 0.0007855001, z: 0}
+--- !u!54 &678694749
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 678694744}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
+--- !u!114 &678694750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 678694744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e35a42856692f7f4897135f8fd93d419, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 134913132}
+  canPick: 0
 --- !u!1001 &765512394
 Prefab:
   m_ObjectHideFlags: 0
@@ -5387,8 +5435,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1242339025}
-  m_LocalRotation: {x: 0, y: 0.97045374, z: 0, w: -0.24128726}
-  m_LocalPosition: {x: 1043.21, y: -45.239998, z: 933}
+  m_LocalRotation: {x: -0.10477577, y: 0.07987174, z: 0.008442599, w: 0.99124736}
+  m_LocalPosition: {x: 1199.6774, y: -73.35634, z: 146.65955}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5753,6 +5801,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &1485081855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1485081849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da3832999c575d14fac4ec2d53df4ed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1495370017
 GameObject:
   m_ObjectHideFlags: 0
@@ -6081,6 +6140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 001bbd1a04b2d3b499efb762604fa1ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  magicType: staff
 --- !u!54 &1652269098
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6155,8 +6215,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1735767821}
-  m_LocalRotation: {x: 0, y: 0.97045374, z: 0, w: -0.24128726}
-  m_LocalPosition: {x: 985.4817, y: 107.37999, z: 605.6072}
+  m_LocalRotation: {x: -0.10477577, y: 0.07987174, z: 0.008442599, w: 0.99124736}
+  m_LocalPosition: {x: 1401.4574, y: 135.49637, z: 1291.0105}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6372,6 +6432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdc2f3b6928037049b3339b926618180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  magicProbe: {fileID: 1485081849}
 --- !u!54 &1889171119
 Rigidbody:
   m_ObjectHideFlags: 0
