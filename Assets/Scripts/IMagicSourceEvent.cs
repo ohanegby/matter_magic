@@ -7,4 +7,5 @@ public interface IMagicSourceEvent : IEventSystemHandler
 {
     void MagicSourceEnergy();
     void MagicSourceEnergyExit();
+    void MagicSourceType(string magicType);
 }

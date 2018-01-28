@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class SnowTrigger : MonoBehaviour {
     bool collided = false;
+    public GameObject diamond;
+    public GameObject magicProbe;
+    DiamondScript diamondScript;
+    EnergyProbeScript eps;
     // Use this for initialization
     void Start () {
-		
-	}
+        diamondScript = diamond.GetComponent<DiamondScript>();
+        eps = magicProbe.GetComponent<EnergyProbeScript>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -22,9 +27,12 @@ public class SnowTrigger : MonoBehaviour {
         Debug.Log(other.gameObject.name);
         if (other.gameObject.name.Equals("magic_probe"))
         {
-            Debug.Log("collider_snow_magic");
-            collided = true;
-            gameObject.SetActive(false);
+            //if (eps.GetMagicType().Equals("lava"))
+            //{
+                collided = true;
+                gameObject.SetActive(false);
+                diamondScript.canPick = true;
+            //}
         }
     }
 

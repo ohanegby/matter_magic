@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class WaterTrigger : MonoBehaviour {
     bool collided = false;
+    public GameObject magicProbe;
+  
+    EnergyProbeScript eps;
     // Use this for initialization
-    void Start () {
-		
-	}
-	
+    void Start()
+    {
+        eps = magicProbe.GetComponent<EnergyProbeScript>();
+        Debug.Log("wttt");
+        Debug.Log(eps.GetMagicType());
+    }
+   
 	// Update is called once per frame
 	void Update () {
 		
@@ -20,7 +26,12 @@ public class WaterTrigger : MonoBehaviour {
        // Debug.Log(other.gameObject.name);
         if (other.gameObject.name.Equals("magic_probe"))
         {
-            collided = true;
+            Debug.Log("magic watertrigger");
+            Debug.Log(eps.GetMagicType());
+           // if (eps.GetMagicType().Equals("staff"))
+            //{
+                collided = true;
+           // }
         }
     }
 

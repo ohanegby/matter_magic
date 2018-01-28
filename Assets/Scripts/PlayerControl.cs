@@ -78,7 +78,7 @@ public class PlayerControl : MonoBehaviour, IMagicSourceEvent
             RaycastHit hit;
 
             Vector3 forwardVector = rightHand.transform.rotation * Vector3.forward;
-            Debug.Log(forwardVector);
+            
             bool haveHit = false;
             rayStart = rightHand.transform.position;
             //probe.transform.position = rayStart + forwardVector * 20.0f;
@@ -125,5 +125,10 @@ public class PlayerControl : MonoBehaviour, IMagicSourceEvent
     public void PickedDiamond()
     {
         diamondCount++;
+    }
+
+    public void MagicSourceType(string magicType)
+    {
+        
     }
 }
